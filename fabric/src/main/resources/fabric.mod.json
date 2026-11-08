@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "ping-display",
+	"version": "${version}",
+	"name": "Ping Display",
+	"description": "A simple Ping Display with fully configurable colour settings.",
+	"authors": [
+		"Avie"
+	],
+	"contact": {
+		"homepage": "https://avie.cc/",
+		"sources": "https://github.com/avie293/ping-display",
+		"issues": "https://github.com/avie293/avie-issues/issues"
+	},
+	"license": "Avie Terms & Conditions 1.0",
+	"icon": "assets/ping-display/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"cc.avie.pingdisplay.fabric.PingDisplayFabric"
+		]
+	},
+	"mixins": [
+		"ping-display.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*",
+		"tabbylib": ">=${tabbylib_version}"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"avie29.discord": "https://discord.gg/57TZ8BJvd9"
+			}
+		}
+	}
+
+}

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a bug, crash or idea
+    url: https://github.com/avie293/avies-issues/issues/new/choose
+    about: Issues for all of Avie's projects are collected in the avies-issues repository

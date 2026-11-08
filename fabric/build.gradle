@@ -1,0 +1,18 @@
+plugins {
+	id 'multiloader-loader'
+	id 'net.fabricmc.fabric-loom'
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+
+	implementation "cc.avie.tabbylib:tabbylib:${tabbylib_version}"
+
+	// Only in the dev client, to test the Mod Menu config button that TabbyLib adds
+	localRuntime "com.terraformersmc:modmenu:${modmenu_version}"
+}

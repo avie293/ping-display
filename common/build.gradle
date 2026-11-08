@@ -1,0 +1,32 @@
+plugins {
+	id 'multiloader-common'
+	id 'net.neoforged.moddev'
+}
+
+// Vanilla Minecraft only, no loader: the loader specific code is in fabric and neoforge
+neoForge {
+	neoFormVersion = neo_form_version
+}
+
+dependencies {
+	// The API of TabbyLib without the loader specific parts
+	compileOnly "cc.avie.tabbylib:tabbylib-common:${tabbylib_version}"
+	compileOnly "net.fabricmc:sponge-mixin:${mixin_version}"
+}
+
+// The loader projects compile these sources and resources into their jars
+configurations {
+	commonJava {
+		canBeResolved = false
+		canBeConsumed = true
+	}
+	commonResources {
+		canBeResolved = false
+		canBeConsumed = true
+	}
+}
+
+artifacts {
+	commonJava sourceSets.main.java.sourceDirectories.singleFile
+	commonResources sourceSets.main.resources.sourceDirectories.singleFile
+}

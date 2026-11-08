@@ -1,0 +1,37 @@
+// Setup of the loader projects: they compile the sources and resources of common into their own jar
+plugins {
+	id 'multiloader-common'
+}
+
+configurations {
+	commonJava {
+		canBeResolved = true
+	}
+	commonResources {
+		canBeResolved = true
+	}
+}
+
+dependencies {
+	// So the IDE knows the common classes, the jar gets them from the sources below
+	compileOnly project(':common')
+	commonJava project(path: ':common', configuration: 'commonJava')
+	commonResources project(path: ':common', configuration: 'commonResources')
+}
+
+tasks.named('compileJava', JavaCompile) {
+	dependsOn configurations.commonJava
+	source configurations.commonJava
+}
+
+processResources {
+	dependsOn configurations.commonResources
+	from configurations.commonResources
+}
+
+tasks.named('sourcesJar', Jar) {
+	dependsOn configurations.commonJava
+	from configurations.commonJava
+	dependsOn configurations.commonResources
+	from configurations.commonResources
+}
