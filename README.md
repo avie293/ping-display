@@ -10,4 +10,6 @@ Ping Display replaces the signal bars in the tab list with each player's ping in
 - Optional ping on player name tags, with a configurable bracket color.
 - A custom text for players whose ping is still unknown, and a toggle for the text shadow.
 
+Pre 2.0.0 versions: [Avies Archive](https://avie.cc/archive/)
+
 Bugs and crashes can be reported in the [issue tracker](https://github.com/avie293/avie-issues/issues) by selecting **Ping Display** as the project.
